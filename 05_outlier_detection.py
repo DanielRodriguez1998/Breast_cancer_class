@@ -3,7 +3,7 @@
 #======================
 from sklearn.ensemble import IsolationForest
 
-# Subtipos de interés (ajústalos si quieres)
+# Subtipos de interés
 subtypes_of_interest = ['Basal', 'Her2', 'LumA', 'LumB']
 
 # Inicializar lista para guardar IDs típicos
@@ -14,7 +14,7 @@ for subtype in subtypes_of_interest:
     subtype_samples = metadata[metadata['Subtype'] == subtype].index
     X_subtype = expression_scaled.T[subtype_samples]  # NOTA: columnas = muestras
     
-    # Transponer → muestras como filas
+    # Transponer muestras como filas
     X_subtype_T = X_subtype.T
 
     # Isolation Forest
