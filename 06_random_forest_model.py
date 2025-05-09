@@ -77,23 +77,23 @@ for seed in range(200):
 
 # Guardar resultados en archivo de texto
 with open("best_result.txt", "w") as f:
-    f.write("✅ Mejor combinación encontrada (de semillas 0–199):\n")
+    f.write(" Mejor combinación encontrada (de semillas 0–199):\n")
     f.write(str(best_config) + "\n\n")
-    f.write("✅ Mejor confusion matrix:\n")
+    f.write(" Mejor confusion matrix:\n")
     f.write(str(best_conf_matrix) + "\n\n")
-    f.write("✅ Mejor classification report:\n")
+    f.write(" Mejor classification report:\n")
     f.write(best_report_text)
-print("✅ Resultados guardados en 'best_result.txt'")
+print(" Resultados guardados en 'best_result.txt'")
 
 # Guardar classification report como CSV tabular
 report_df = pd.DataFrame(best_report_dict).T
 report_df.to_csv('best_classification_report.csv')
-print("✅ Reporte guardado en 'best_classification_report.csv'")
+print(" Reporte guardado en 'best_classification_report.csv'")
 
 # Guardar classification report como JSON completo
 with open('best_classification_report.json', 'w') as f:
     json.dump(best_report_dict, f)
-print("✅ Reporte guardado en 'best_classification_report.json'")
+print(" Reporte guardado en 'best_classification_report.json'")
 
 # Graficar y guardar matriz de confusión
 labels = sorted(best_y_test.unique())
@@ -109,8 +109,8 @@ plt.title('Confusion Matrix (Best Model)')
 plt.tight_layout()
 plt.savefig('confusion_matrix.png', dpi=300)
 plt.show()
-print("✅ Gráfico guardado como 'confusion_matrix.png'")
+print(" Gráfico guardado como 'confusion_matrix.png'")
 
 # Guardar el modelo entrenado
 joblib.dump(best_model, 'best_random_forest.pkl')
-print("✅ Modelo guardado como 'best_random_forest.pkl'")
+print(" Modelo guardado como 'best_random_forest.pkl'")
