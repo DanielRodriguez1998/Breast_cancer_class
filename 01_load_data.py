@@ -21,6 +21,6 @@ print(f"metadata dimensiones después de asignar índice: {metadata.shape}")
 print(f"expression dimensiones: {expression.shape}")
 
 if all(metadata.index == expression.columns):
-    print("✅ ¡metadata y expression perfectamente alineados!")
+    print(" ¡metadata y expression perfectamente alineados!")
 else:
-    print("⚠ Los índices no coinciden aún, revisa manualmente.")
+    print(" Los índices no coinciden aún, revisa manualmente.")
